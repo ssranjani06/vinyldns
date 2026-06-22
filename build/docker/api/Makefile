@@ -1,7 +1,7 @@
 SHELL=bash
 IMAGE_TAG=$(shell awk -F'"' '{print $$2}' ../../../version.sbt)
 IMAGE_NAME=vinyldns/api
-ROOT_DIR:=$(shell dirname $(realpath  $(lastword $(MAKEFILE_LIST))))
+ROOT_DIR:=$(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # Check that the required version of make is being used
 REQ_MAKE_VER:=3.82
